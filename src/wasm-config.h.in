@@ -48,8 +48,10 @@
 #elif COMPILER_IS_MSVC
 #include <malloc.h>
 #define alloca _alloca
+#elif defined(alloca)
+// Nothing. Alloca should just work (mingw is in this category).
 #else
-#define alloca(size) __builtin_alloca(size)
+#error no alloca
 #endif
 
 #if COMPILER_IS_CLANG || COMPILER_IS_GNU
