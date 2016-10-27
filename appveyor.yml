@@ -26,6 +26,7 @@ install:
 before_build:
   # Check the style of a subset of Python code until the other code is updated.
   - flake8 --ignore=E111,E114 ./scripts/
+  - git submodule update --init --recursive
 
 build_script:
   - cmake .  -DCMAKE_BUILD_TYPE=%CONFIG% -G "%GENERATOR%"
