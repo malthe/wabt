@@ -82,7 +82,7 @@ if (COMPILER_IS_MSVC)
   # disable warning C4056, C4756: overflow in floating-point constant arithmetic
   #   seems to not like float compare w/ HUGE_VALF; bug?
   # disable warning C4244: wabt is full of truncating conversions
-  add_definitions(-W3 -WX -wd4018 -wd4056 -wd4756 -wd4244 -D_CRT_SECURE_NO_WARNINGS)
+  add_definitions(-W3 -WX -wd4018 -wd4056 -wd4756 -wd4244 -wd2467 -D_CRT_SECURE_NO_WARNINGS)
 else ()
   # disable -Wunused-parameter: this is really common when implementing
   #   interfaces, etc.
