@@ -49,7 +49,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #else
-#error no alloca
+#define alloca(size) __builtin_alloca(size)
 #endif
 
 #if COMPILER_IS_CLANG || COMPILER_IS_GNU
